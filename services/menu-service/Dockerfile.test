@@ -1,0 +1,19 @@
+FROM node:14-alpine
+
+WORKDIR /app/shared
+
+COPY shared/package*.json .
+
+RUN npm install
+
+COPY shared/ .
+
+WORKDIR /app/menu-service
+
+COPY menu-service/package*.json .
+
+RUN npm install
+
+COPY menu-service .
+
+CMD ["npm", "test"]

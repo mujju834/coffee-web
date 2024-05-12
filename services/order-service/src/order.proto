@@ -1,0 +1,121 @@
+syntax = "proto3";
+
+package orderPackage;
+
+service OrderService {
+  rpc PlaceOrder(OrderRequest) returns (OrderResponse);
+  rpc GetOrderDetails(OrderDetailsRequest) returns (OrderDetailsResponse);
+  rpc GetAllOrderDetails(EmptyRequest) returns (AllOrderDetailsResponse);
+  rpc GetOrderStatus(OrderStatusRequest) returns (OrderStatusResponse);
+  rpc GetOrderHistory(OrderHistoryRequest) returns (OrderHistoryResponse);
+  rpc UpdateOrderStatus(UpdateOrderStatusRequest) returns (UpdateOrderStatusResponse);
+  rpc ProcessPayment(PaymentRequest) returns (PaymentResponse);
+  rpc ApplyPromotion(PromotionRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+  string userId = 1;
+  repeated OrderItem orderItems = 2;
+  string paymentMethod = 3;
+  DeliveryAddress deliveryAddress = 4;
+  string promoCodeUsed = 5;
+  double discount = 6;
+  double taxAmount = 7;
+}
+message OrderResponse {
+  string orderId = 1;
+  string orderDate = 2;
+  double totalAmount = 3;
+  string orderStatus = 4;
+  string paymentStatus = 5;
+}
+
+message OrderDetailsRequest{
+  string orderId = 1;
+}
+message OrderDetailsResponse {
+  string orderId = 1;
+  string userId = 2;
+  string orderDate = 3;
+  repeated OrderItem orderItems = 4;
+  double totalAmount = 5;
+  double totalDiscountedAmount = 6;
+  double taxAmount = 7;
+  string orderStatus = 8;
+  string paymentStatus = 9;
+  string paymentMethod = 10;
+  DeliveryAddress deliveryAddress = 11;
+  string promoCodeUsed = 12;
+}
+
+message EmptyRequest {
+
+}
+message AllOrderDetailsResponse {
+  repeated OrderDetailsResponse orderDetailsList = 1;
+}
+
+message OrderStatusRequest {
+  string orderId = 1;
+}
+
+message OrderStatusResponse {
+  string orderStatus = 1;
+}
+
+message OrderHistoryRequest {
+  string userId = 1;
+}
+
+message OrderHistoryResponse {
+  repeated OrderResponse orders = 1;
+}
+
+message UpdateOrderStatusRequest {
+  string orderId = 1;
+  string newStatus = 2;
+}
+
+message UpdateOrderStatusResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message PaymentRequest {
+  string orderId = 1;
+  string paymentMethod = 2;
+  double totalAmount = 3;
+}
+
+message PaymentResponse {
+  string paymentId = 1;
+  string paymentStatus = 2;
+  string paymentDate = 3;
+}
+
+message PromotionRequest {
+  string orderId = 1;
+  string promoCode = 2;
+}
+
+message OrderItem {
+  string itemId = 1;
+  string itemName = 2;
+  int32 quantity = 3;
+  double price = 4;
+  double subtotal = 5;
+  double discountedValue = 6;
+}
+
+message DeliveryAddress {
+  // The street address.
+  string street = 1;
+  // The city.
+  string city = 2;
+  // The state or province.
+  string state = 3;
+  // The postal code or ZIP code.
+  string postalCode = 4;
+  // The country.
+  string country = 5;
+}

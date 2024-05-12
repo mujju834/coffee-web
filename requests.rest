@@ -1,0 +1,38 @@
+###
+GET http://localhost:5000/auth/user
+x-auth-token: 
+
+###
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email": "user2@admin.com",
+    "password":"quang123"
+}
+###
+
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "username":"Quang",
+    "email": "user@example.com",
+    "password":"quang123"
+}
+###
+
+POST http://localhost:5000/admin/register
+Content-Type: application/json
+
+{
+    "username":"Trang",
+    "email": "user@admin.com",
+    "password":"quang123"
+}
+
+###
+GET http://localhost:5000/category/all
+
+
+

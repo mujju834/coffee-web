@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package userPackage;
+
+service UserService {
+  rpc registerUser(RegisterRequest) returns (SuccessMessageResponse);
+  rpc updateCart(UpdateCartRequest) returns (UpdateCartResponse);
+  rpc getCartItems(UserIdRequest) returns (GetCartResponse);
+  rpc getUserName(UserIdRequest) returns (NameResponse);
+  rpc getAllUsers(EmptyRequest) returns (AllUsersResponse);
+  rpc clearCart(UserIdRequest) returns (SuccessMessageResponse);
+  rpc addPromoCode(addPromoCodeRequest) returns (addPromoCodeResponse);
+  rpc retrievePromoCodes(UserIdRequest) returns (retrievePromoCodesResponse);
+  rpc removePromoCode(addPromoCodeRequest) returns (SuccessMessageResponse);
+}
+
+//Register
+message RegisterRequest {
+  string username = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message SuccessMessageResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message UpdateCartRequest{
+  string userId = 1;
+  string itemId = 2;
+  string itemName = 3;
+  double price = 4;
+  int32 quantity = 5;
+}
+
+message UpdateCartResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message UserIdRequest {
+  string userId = 1;
+}
+
+message CartItem {
+  string itemId = 1;
+  string itemName = 2;
+  double price = 3;
+  int32 quantity = 4;
+  double discountedValue = 5;
+  
+}
+
+message GetCartResponse {
+  repeated CartItem items = 1;
+}
+
+message NameResponse {
+  string name = 1;
+}
+
+message EmptyRequest {
+
+}
+message UserResponse {
+  string id = 1;
+  string username = 2;
+  string email = 3;
+  string password = 4;
+  string role = 5;
+  string createdAt = 6;
+}
+message AllUsersResponse {
+  repeated UserResponse users = 1;
+}
+
+message addPromoCodeRequest {
+  string userId = 1;
+  string promoCodeId = 2;
+}
+
+message addPromoCodeResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message retrievePromoCodesResponse {
+  repeated string promos = 1;
+}
