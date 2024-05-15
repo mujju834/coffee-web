@@ -1,0 +1,106 @@
+/* General Styles */
+/* body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #7f7fd5, #86a8e7, #91eae4);
+} */
+.registration-form-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #7f7fd5, #86a8e7, #91eae4);
+}
+
+.registration-form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    transition: transform 0.3s ease-in-out;
+    /* other styles... */
+}
+
+/* Form Container */
+.registration-form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.registration-form-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Title Styling */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px;
+}
+
+/* Input Field Styling */
+.form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-bottom-color: #007bff;
+    outline: none;
+}
+
+/* Enhance placeholder visibility */
+::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Button Styling */
+.form-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #647dee, #7f53ac);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.form-button:hover, .form-button:focus {
+    background: linear-gradient(to right, #7f53ac, #647dee);
+    outline: none;
+}
+
+/* Message Display */
+.message-display {
+    text-align: center;
+    color: #b30000;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .registration-form-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
