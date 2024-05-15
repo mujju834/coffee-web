@@ -1,8 +1,8 @@
-# Brewhub - Coffee Business Web Application
+# MUJJUS - Coffee Business Web Application
 
-## Access Brewhub Website ☕
+## Access MUJJUS-COFFEE Website ☕
 
-Visit the [Brewhub Coffee Shop](http://brewhubcoffeeshop-1569226204.ap-southeast-2.elb.amazonaws.com/) to experience the brewing excellence in every cup!
+Visit the [MUJJUS Coffee Shop](http://brewhubcoffeeshop-1569226204.ap-southeast-2.elb.amazonaws.com/) to experience the brewing excellence in every cup!
 
 
 
@@ -22,7 +22,7 @@ Visit the [Brewhub Coffee Shop](http://brewhubcoffeeshop-1569226204.ap-southeast
 
 
 
-Welcome to Brewhub, a web application designed to streamline and enhance your coffee business operations. This README.md will guide you through the setup process and provide an overview of the application's features.
+Welcome to MUJJUS, a web application designed to streamline and enhance your coffee business operations. This README.md will guide you through the setup process and provide an overview of the application's features.
 
 ## Table of Contents
 
@@ -272,4 +272,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 Feel free to reach out with any questions or feedback. Happy brewing!
 
-**Brewhub** - *Brewing Excellence in Every Cup*
+**MUJJU'S** - *Brewing Excellence in Every Cup*
